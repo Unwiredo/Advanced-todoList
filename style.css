@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --mainFont: "Poppins", sans-serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--mainFont);
+    color: black;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+    margin-bottom: 20px;
+}
+
+header h1{
+    font-weight: 200;
+    margin-left: 20px;
+}
+
+nav ul{
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-right:10px;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.todo-elements{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-input{
+    min-width: 40%;
+    max-width: 600px;
+    height: 35px;
+}
+
+.add-btn
+
+.display-todos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-container{
+    max-width: 500px;
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.todoDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todoDiv p{
+    flex: 1;
+    padding: 7px;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
