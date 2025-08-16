@@ -51,9 +51,37 @@ nav ul li{
     min-width: 40%;
     max-width: 600px;
     height: 35px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.224);
 }
 
-.add-btn
+.todo-input::placeholder{
+    padding-left: 8px;
+}
+
+.todo-input:focus{
+    outline: none;
+}
+
+.todo-input:not(:placeholder-shown){
+    padding-left: 10px;
+}
+
+.todo-input:focus::placeholder{
+    padding-left: 8px;
+    color: transparent;
+}
+
+.add-btn{
+    background-color: rgb(35, 35, 35);
+    color: white;
+    height: 35px;
+    width: 40px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.354);
+}
 
 .display-todos{
     display: flex;
