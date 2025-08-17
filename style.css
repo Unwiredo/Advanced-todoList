@@ -113,6 +113,7 @@ nav ul li{
     padding: 7px;
     font-size: 20px;
     overflow-wrap: anywhere;
+    cursor: default;
 }
 
 .checked{
@@ -130,8 +131,23 @@ nav ul li{
     outline: none;
 }
 
+.checked:hover{
+    background-color: rgba(205, 205, 205, 0.477);
+}
+
 .is-checked{
     background-color: rgb(47, 47, 47);
+    opacity: 40%;
+}
+
+.is-checked:hover{
+    background-color: rgb(0, 0, 0);
+    opacity: 60%;
+}
+
+.text-checked{
+    opacity: 40%;
+    text-decoration: line-through;
 }
 
 .edit-button{
@@ -143,10 +159,15 @@ nav ul li{
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.148);
     cursor: pointer;
     margin-right: 5px;
+    transition: 0.6s;
 }
 
 .edit-button:focus{
     outline: none;
+}
+
+.edit-button:hover{
+    background: rgb(236, 235, 235);
 }
 
 .delete-button{
@@ -158,10 +179,15 @@ nav ul li{
     background-color: transparent;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.231);
     cursor: pointer;
+    transition: 0.6s;
 }
 
 .delete-button:focus{
     outline: none;
+}
+
+.delete-button:hover{
+    background-color: rgb(236, 235, 235);
 }
 
 .error-popup{
@@ -189,5 +215,20 @@ nav ul li{
 .popup-paragraph{
     font-size: 1.1em;
     margin-top: 10px;
+}
+
+.input-edit{
+    all: unset;
+    flex: none;
+    width: auto;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+    border: none;
+    padding: 7px;
+    box-sizing: border-box;
+}
+
+.input-edit:focus{
+    outline: none;
 }
 
