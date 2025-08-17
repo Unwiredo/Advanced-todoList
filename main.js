@@ -4,6 +4,7 @@ class todoList{
     addBtn = document.querySelector('.js-add-button');
     inputElement = document.querySelector('.js-todo-input');
     todoContainer = document.querySelector('.js-todos-container');
+    popupElement = document.querySelector('.js-popup');
 
     renderTodoList(){
         let todoListHTML = '';
@@ -13,8 +14,8 @@ class todoList{
             const html = `<div class="todoDiv">
                 <button class="js-check-button checked"></button>
                 <p>${name}</p>
-                <button><i class="fa fa-pen"></i></button>
-                <button class="js-delete-button" data-index="${index}"><i class="fa fa-trash"></i></button>
+                <button class="js-edit-button edit-button"><i class="fa fa-pen"></i></button>
+                <button class="js-delete-button delete-button" data-index="${index}"><i class="fa fa-trash"></i></button>
             </div>`;
             todoListHTML+=html;
         });
@@ -29,9 +30,26 @@ class todoList{
     
     addTodo(){
         const todo = this.inputElement.value;
-        this.todoList.push({
+        
+        if(this.inputElement.value === ''){
+            this.popupElement
+                .innerHTML = `
+                <div class="error-popup">
+                    <div class="error-image"></div>
+                    <div>
+                        <p class="popup-paragraph">Error: Please a name to your task...
+                    </div>
+                    <div class="ok-button">
+                        <button class="js-ok popup-ok">Ok</button>
+                    </div>
+                </div>
+                `
+        }else{
+            this.todoList.push({
             name: todo
-        });
+            });
+        }
+
         this.inputElement.value = '';
         this.renderTodoList();
         localStorage.setItem('todos', JSON.stringify(this.todoList));
