@@ -12,8 +12,8 @@ class todoList{
         this.todoList.forEach((todo, index) => {
             const {name} = todo;
             const html = `<div class="todoDiv">
-                <button class="js-check-button checked"></button>
-                <p>${name}</p>
+                <button class="js-check-button checked ${todo.done? 'is-checked': ''}"></button>
+                <p ${todo.done? 'text-checked': ''}>${name}</p>
                 <button class="js-edit-button edit-button"><i class="fa fa-pen"></i></button>
                 <button class="js-delete-button delete-button" data-index="${index}"><i class="fa fa-trash"></i></button>
             </div>`;
@@ -26,6 +26,17 @@ class todoList{
             const index = Number(button.dataset.index);
             button.addEventListener('click', () => this.removeTodo(index));
         });
+
+        document.querySelectorAll('.js-check-button')
+            .forEach((checkButton, i)=> {
+                checkButton.addEventListener('click', () =>{
+                    this.todoList[i].done = !this.todoList[i].done;
+                    this.saveToLocalStorage();
+                    this.renderTodoList();
+                })
+            });
+
+        
     }
     
     addTodo(){
@@ -44,6 +55,7 @@ class todoList{
                     </div>
                 </div>
                 `
+                this.removePopup();
         }else{
             this.todoList.push({
             name: todo
@@ -52,17 +64,24 @@ class todoList{
 
         this.inputElement.value = '';
         this.renderTodoList();
-        localStorage.setItem('todos', JSON.stringify(this.todoList));
+        this.saveToLocalStorage();
     }
 
     removeTodo(index){
         this.todoList.splice(index, 1);
         this.renderTodoList();
+        this.saveToLocalStorage();
+    }
+
+    saveToLocalStorage(){
         localStorage.setItem('todos', JSON.stringify(this.todoList));
     }
 
-    checkButton(){
-
+    removePopup(){
+        document.querySelector('.js-ok')
+            .addEventListener('click', () => {
+                document.querySelector('.js-popup').innerHTML = '';
+            })
     }
 }
 

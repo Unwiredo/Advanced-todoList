@@ -123,10 +123,15 @@ nav ul li{
     border-radius: 7px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.258);
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .checked:focus{
     outline: none;
+}
+
+.is-checked{
+    background-color: rgb(47, 47, 47);
 }
 
 .edit-button{
@@ -185,3 +190,4 @@ nav ul li{
     font-size: 1.1em;
     margin-top: 10px;
 }
+
