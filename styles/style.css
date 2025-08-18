@@ -15,12 +15,19 @@
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 60px;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.34);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.header-container{
+    width: 60vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 header h1{
